@@ -1,0 +1,11 @@
+{
+  "name": "hof-example-app-save-return-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:UKHomeOffice/hof-example-app-save-return-api.git",
+  "author": "Alice Lui & Robert McCann",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
