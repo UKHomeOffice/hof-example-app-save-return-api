@@ -14,6 +14,12 @@ const selectableProps = [
   'updated_at'
 ];
 
+const findByEmail = email => knex.select(selectableProps)
+  .from(tableName)
+  .where({ email })
+  .timeout(timeout);
+
+
 const create = props => {
   return knex.insert(props)
     .returning(selectableProps)
@@ -22,5 +28,6 @@ const create = props => {
 };
 
 module.exports = {
+  findByEmail,
   create
 };
