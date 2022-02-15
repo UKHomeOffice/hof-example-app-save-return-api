@@ -15,15 +15,6 @@ const selectableProps = [
 ];
 
 const create = props => {
-  if (props.id) {
-    return knex(tableName).where({
-      id: props.id
-    })
-      .update({session: props.session, updated_at: knex.fn.now()})
-      .returning(selectableProps)
-      .timeout(timeout);
-  }
-
   return knex.insert(props)
     .returning(selectableProps)
     .into(tableName)
