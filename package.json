@@ -13,7 +13,11 @@
   "author": "Alice Lui & Robert McCann",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "hof-example-app-schema": "../hof-example-app-schema",
+    "knex": "^1.0.3",
+    "morgan": "^1.10.0",
+    "morgan-json": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^8.7.0",
