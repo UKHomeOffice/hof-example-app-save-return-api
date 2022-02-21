@@ -19,6 +19,10 @@ const findByEmail = email => knex.select(selectableProps)
   .where({ email })
   .timeout(timeout);
 
+const findById = (id, email) => knex.select(selectableProps)
+  .from(tableName)
+  .where({ id, email })
+  .timeout(timeout);
 
 const create = props => {
   if (props.id) {
@@ -37,5 +41,6 @@ const create = props => {
 
 module.exports = {
   findByEmail,
+  findById,
   create
 };

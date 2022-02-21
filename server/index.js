@@ -14,13 +14,14 @@ const format = json({
 });
 
 const app = express();
-const { create, getForms } = require(`./controllers/${tableName}`);
+const { getForms, getId, create, } = require(`./controllers/${tableName}`);
 
 app.use(express.json());
 app.use(morgan(format));
 app.use(express.urlencoded({extended: true}));
 
 app.get(`/${tableName}/:email`, getForms);
+app.get(`/${tableName}/:email/:id`, getId);
 app.post(`/${tableName}`, create);
 
 app.listen(config.port);
