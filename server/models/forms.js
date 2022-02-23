@@ -39,8 +39,13 @@ const create = props => {
     .timeout(timeout);
 };
 
+const del = (id, email) => knex(tableName)
+  .where({ id, email })
+  .del();
+
 module.exports = {
   findByEmail,
   findById,
-  create
+  create,
+  del
 };

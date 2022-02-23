@@ -14,7 +14,6 @@ const getForms = (req, res, next) => {
 const getId = (req, res, next) => {
   const id = req.params.id;
   const email = decodeEmail(req.params.email);
-  
   Forms.findById(id, email)
     .then(session => res.json(session))
     .catch(next);
@@ -30,8 +29,18 @@ const create = (req, res, next) => {
     .catch(next);
 };
 
+const del = (req, res, next) => {
+  const id = req.params.id;
+  const email = decodeEmail(req.params.email);
+
+  Forms.del(id, email)
+    .then(res.sendStatus(200))
+    .catch(next);
+};
+
 module.exports = {
   getForms,
   getId,
-  create
+  create,
+  del
 };
